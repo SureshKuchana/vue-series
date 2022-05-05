@@ -47,3 +47,11 @@ list. Vue uses the key attribute to create unique bindings for each node’s ide
 
 # 4. Computed properties
 Computed properties are used to handle complex calculations of information that need to be displayed in the view.
+
+# 5. Event handling
+# The v-on directive
+The v-on directive is used to create event listeners within the DOM.
+
+```
+v-on:click="upvote(submission.id)"
+```
