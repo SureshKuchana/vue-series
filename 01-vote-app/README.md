@@ -44,3 +44,6 @@ list. Vue uses the key attribute to create unique bindings for each node’s ide
     <!-- Rest of the submission template -->
 </article>
 ```
+
+# 4. Computed properties
+Computed properties are used to handle complex calculations of information that need to be displayed in the view.
