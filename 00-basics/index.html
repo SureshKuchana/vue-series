@@ -8,11 +8,68 @@
 </head>
 <body>
   <div id="app">
+    <!-- render data -->
       <p>{{ message }}</p>
       <p>{{ count }}</p>
       <div>
         <button v-on:click="incrementCount">incrementCount</button>
       </div>
+
+      <!-- if else -->
+      <br>
+      <p>Display even & old numbers</p>
+      <div v-for="number of numbers">
+        <p v-if="number % 2 === 0">even number : {{ number }}</p>
+        <p v-else>old number : {{ number }}</p>
+      </div>
+
+      <!-- V-MODEL -->
+      <!-- Two way binding data, instance/component & form  -->
+      <br>
+      <textarea v-model="longerText" maxlength="72" rows="5" class="message" >
+      </textarea>
+      <br>
+      <p>dynamic data : {{ longerText }}</p>
+
+      <!-- for loop -->
+      <br>
+      <p>Favourite super heroes</p>
+      <ul>
+        <li v-for="hero of superHeroes">{{ hero }}</li>
+      </ul>
+
+      <!-- directive tests -->
+      <div>
+        <input type="number" v-model="num1" aria-label="num1">
+        <span> + </span>
+        <input type="number" v-model="num2" aria-label="num2">
+        <span> = </span>
+        <span>{{ num1 + num2 }}</span>
+      </div>
+      <br>
+      <div>
+        <select v-model="name">
+          <option>Gojo Satoru</option>
+          <option>Yuji Itadori</option>
+          <option>Naruto Uzumaki</option>
+          <option>Tanjiro Kamado</option>
+        </select>
+        <p v-if="name">My favorite anime character is {{name}}</p>
+      </div>
+
+      <!-- methods -->
+      <h5>Comments Section</h5>      
+      <ul>
+        <li v-for="comment in comments" :key="comment">{{ comment }}</li>
+      </ul>
+
+      <br>
+      <input type="text" v-model="newComment" aria-label="comment"
+         placeholder="add a comment"
+         @keyup.enter="addComment">
+      
+      <!-- form -->
+       
   </div>
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -26,13 +83,30 @@
     data(){
       return {
         count: 0,
-        message : "Hi There from Vue Data",        
+        message : "Hi There from Vue Data",
+        numbers : [0,1,2,3,4,5],
+        longerText : "Default text",
+        superHeroes : ["Iron Man", "Captian America", "Thor", "Hulk"],
+        num1 : 0,
+        num2: 0,
+        name : "",
+        newComment : "",
+        comments : [
+          "Good Morning",
+          "How are you, how about u?",
+          "Doing great 😄",
+          "What else 🤠?"
+        ]
       }
     },
     methods: {
       incrementCount(){
         this.count += 1;
       },
+      addComment(){
+        this.comments.push(this.newComment);
+        this.newComment = ''
+      }
     }
   });
   app.mount("#app")
