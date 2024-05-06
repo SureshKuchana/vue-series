@@ -1,0 +1,35 @@
+{
+  "numTotalTestSuites": 2,
+  "numPassedTestSuites": 2,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 1,
+  "numPassedTests": 1,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "startTime": 1715010146261,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "App.vue"
+          ],
+          "fullName": " App.vue renders a title",
+          "status": "passed",
+          "title": "renders a title",
+          "duration": 34,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1715010147439,
+      "endTime": 1715010147473,
+      "status": "passed",
+      "message": "",
+      "name": "/home/sureshkoochana/tech/vuejs/vue-series/ponyracer/results/__tests__/App.spec.ts"
+    }
+  ]
+}
